@@ -1,4 +1,4 @@
-package service
+package appservice
 
 import (
 	"github.com/dulguundd/logError-lib/errs"
@@ -9,7 +9,11 @@ type DefaultServiceService struct {
 	repo service.ServiceRepository
 }
 
-type DeviceService interface {
+func (d DefaultServiceService) GetServices() (service.Service, *errs.AppError) {
+	return service.GetServices()
+}
+
+type ServiceService interface {
 	GetServices() (service.Service, *errs.AppError)
 	//GetService(string) (*dto.DeviceResponse, *errs.AppError)
 }

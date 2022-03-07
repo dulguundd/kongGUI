@@ -10,7 +10,7 @@ type RepositoryGW struct {
 	port string
 }
 
-func (gw G) GetServices() ([]Service, *errs.AppError){
+func (gw RepositoryGW) GetServices() ([]Service, *errs.AppError) {
 	var services []Service
 	var err error
 
